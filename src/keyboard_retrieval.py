@@ -2,7 +2,7 @@ import logging
 import os
 from typing import Final
 
-INPUT_DEVICES_PATH: Final = '/dev/input/by-id'
+INPUT_DEVICES_PATH: Final = '/dev/input/by-path'
 _KEYBOARD_NAME_SUFFIX: Final = '-kbd'
 
 def retrieve_keyboard_name() -> str:
