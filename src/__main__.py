@@ -21,7 +21,7 @@ def get_device_handle(keyboard_name: str) -> libevdev.Device:
         fd.close()
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-k', '--keyboard', type=str, default=str(),
                         help=f"Name of your chattering keyboard device as listed in {INPUT_DEVICES_PATH}. "
@@ -48,3 +48,7 @@ if __name__ == "__main__":
 
     with get_device_handle(args.keyboard or retrieve_keyboard_name()) as device:
         filter_chattering(device, args.threshold)
+
+
+if __name__ == "__main__":
+    main()
